@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/shared/Footer";
 import { Input } from "@/components/ui/input";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import {
   deleteNote,
   getNoteToUpdate,

@@ -1,12 +1,11 @@
 "use client";
 
 import Navbar from "@/components/shared/Navbar";
-import Link from "next/link";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/shared/Footer";
 import { Input } from "@/components/ui/input";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { createNote } from "@/lib/database/actions/note.actions";
 import { useRouter, useSearchParams } from "next/navigation";
 
