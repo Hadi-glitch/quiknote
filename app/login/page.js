@@ -34,7 +34,6 @@ export default function AuthPage() {
 
   const fetchUserId = async (email) => {
     const userId = await getUserId(email);
-    console.log(userId);
     setUserId(userId);
 
     return userId;
@@ -64,13 +63,11 @@ export default function AuthPage() {
   const createAccount = async (userData) => {
     try {
       delete userData.confirmPassword;
-      console.log("Signing up:", userData);
       await createUser(userData);
       const userId = await fetchUserId(userData.email);
 
       const user = await getUser(userId);
       setUser(user);
-      console.log(user);
       router.push(`/dashboard/${userId}`);
     } catch (error) {
       setMessage("Error creating account");
@@ -83,8 +80,6 @@ export default function AuthPage() {
 
       const user = await getUser(userId);
       setUser(user);
-      console.log("Signing in with email:", userData.email);
-      console.log(user);
       if (user.email !== userData.email) {
         setCheckEmail("Email does not match.");
         setIsLoading(false);

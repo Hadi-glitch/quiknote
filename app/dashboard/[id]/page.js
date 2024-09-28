@@ -26,7 +26,6 @@ const Page = ({ params }) => {
   const router = useRouter();
 
   const handleClick = (id) => {
-    console.log("Clicked Note ID:", id);
     router.push(`/dashboard/update?noteId=${id}&userId=${userId}`);
   };
 
@@ -45,7 +44,6 @@ const Page = ({ params }) => {
   };
 
   useEffect(() => {
-    console.log(userId);
     const fetchSessionAndUser = async () => {
       try {
         const session = await getSession();

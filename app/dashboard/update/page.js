@@ -35,9 +35,6 @@ const Page = () => {
   const userId = searchParams.get("userId");
 
   useEffect(() => {
-    console.log(userId);
-    console.log(noteId);
-    
     const fetchNoteData = async () => {
       try {
         if (!userId) {
