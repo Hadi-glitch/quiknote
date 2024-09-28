@@ -163,4 +163,10 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default function SuspenseWrapper() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Page />
+    </Suspense>
+  );
+}

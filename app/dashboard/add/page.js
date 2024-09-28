@@ -8,7 +8,6 @@ import Footer from "@/components/shared/Footer";
 import { Input } from "@/components/ui/input";
 import { useState, useEffect } from "react";
 import { createNote } from "@/lib/database/actions/note.actions";
-import { getUserId } from "@/lib/database/actions/user.actions";
 import { useRouter, useSearchParams } from "next/navigation";
 
 const Page = () => {
@@ -107,4 +106,10 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default function SuspenseWrapper() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Page />
+    </Suspense>
+  );
+}
