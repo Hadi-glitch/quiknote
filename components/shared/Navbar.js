@@ -46,7 +46,7 @@ const Navbar = ({ userId, handleSearch }) => {
     <nav className="p-3 flex justify-between items-center flex-col md:flex-row">
       {/* Logo and Logout Button for Mobile */}
       <div className="flex w-full md:w-fit justify-between items-center md:order-1">
-        <div className="flex">
+        <div className="flex gap-1">
           <Image src="/icons/logo.png" alt="logo" width={35} height={35} />
           <h1 className="font-extrabold text-2xl">Quiknote</h1>
         </div>

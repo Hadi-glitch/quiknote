@@ -71,7 +71,7 @@ const Page = () => {
 
     try {
       await updateNote(noteId, note);
-      router.push(`/dashboard/${userId}`);
+      router.push(`/dashboard/${userId}?success=true&source=update`);
     } catch (error) {
       setErrorMessage("Error updating note. Please try again.");
     }
@@ -81,7 +81,7 @@ const Page = () => {
   const handleDeleteNote = async () => {
     try {
       await deleteNote(noteId);
-      router.push(`/dashboard/${userId}`);
+      router.push(`/dashboard/${userId}?success=true&source=delete`);
     } catch (error) {
       setErrorMessage("Error deleting note. Please try again.");
     }

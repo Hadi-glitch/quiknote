@@ -47,7 +47,7 @@ const Page = () => {
 
     try {
       await createNote(note);
-      router.push(`/dashboard/${userId}`);
+      router.push(`/dashboard/${userId}?success=true&source=add`);
     } catch (error) {
       setErrorMessage("Error creating note. Please try again.");
     }
